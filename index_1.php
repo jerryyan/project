@@ -1,5 +1,6 @@
 <!--<meta http-equiv="refresh" content="20">-->
 <?php
+//config.php
 require_once 'config.php';
 //$date = date("Y-m-d");
 $date = "2016-03-03";
