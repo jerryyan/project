@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员权限</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-success" id="add">添加账号</button>
+            </div>
+            <div class="col-md-12" style="overflow: scroll">
+                <table class="table" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th style="min-width: 130px;">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>
+                                <button type="button" onclick="updata()" class="btn btn-warning btn-sm">编辑</button>
+                                <button type="button" class="btn btn-primary btn-sm">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>
+                                <button type="button" onclick="updata()" class="btn btn-warning btn-sm">编辑</button>
+                                <button type="button" class="btn btn-primary btn-sm">删除</button>
+                            </td>
+                        </tr>
+                                        inpu  
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>
+                                <button type="button" onclick="updata()" class="btn btn-warning btn-sm">编辑</button>
+                                <button type="button" class="btn btn-primary btn-sm">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>
+                                <button type="button" onclick="updata()" class="btn btn-warning btn-sm">编辑</button>
+                                <button type="button" class="btn btn-primary btn-sm">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal"></div>
+    </div>
+</body>
+<script type="text/html" id="adds">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <p class="modal-title">新增账号</p>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="email">账号:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">密码:</label>
+                        <input type="password" class="form-control" id="pwd">
+                    </div>
+                </form>
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" id="canTrue1" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <p class="modal-title">编辑</p>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="email">账号:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">密码:</label>
+                        <input type="password" class="form-control" id="pwd">
+                    </div>
+                </form>
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button"  id="canTrue2" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</script>
+<script src="./jquery.js"></script>
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $('#add').click(function () {
+        $('#myModal').html($('#adds').html())
+        $('#myModal').modal('show')
+        $('#canTrue1').click(function () {
+            console.log(11111);
+            $('#myModal').modal('hide')
+        })
+    })
+
+    function updata() {
+        $('#myModal').html($('#update').html())
+        $('#myModal').modal('show')
+        $('#canTrue2').click(function () {
+            console.log(22222);
+            $('#myModal').modal('hide')
+        })
+    }
+</script>
+
+</html>
