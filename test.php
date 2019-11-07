@@ -1,6 +1,6 @@
 <?php
 try {
- 
+   //test.php
     $hostname = "120.25.95.93";
     $dbname = "iSoftZJDD";
     $username = "sa";
